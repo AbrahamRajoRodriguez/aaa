@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: Desarrollo de Software Avanzado</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 60px; /* Ajusta este valor según sea necesario */
+
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(66, 133, 244, 0); /* Fondo transparente para el header */
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            display: none; /* Inicialmente oculto */
+        }
+
+        section {
+            position: relative;
+            padding: 40px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.6); /* Fondo con transparencia */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo con opacidad */
+            z-index: -1;
+            opacity: 0; /* Inicialmente transparente */
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        section:hover::before {
+            opacity: 1; /* Hacer visible al hacer hover */
+        }
+
+        section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 1); /* Ajusta la opacidad al hacer hover */
+        }
+
+        button {
+            background-color: rgba(66, 133, 244, 0.9); /* Ajusta la opacidad del botón */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1565c0;
+        }
+
+        footer {
+            position: fixed;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px; /* Agrega este margen superior */
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            z-index: -1;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+<div id="particles-js"></div>
+
+<header>
+    <h1>Servidor Web - Protocolo HTTP</h1>
+    <p>Explorando el Mundo de la Programación</p>
+</header>
+
+<section id="introduction">
+    <h2>Introducción</h2>
+    <p>Bienvenido a esta presentación sobre el desarrollo de un protocolo básico para la comuncacion pero avanzado en programacion, adentrándonos en el fascinante mundo de la programación de alto nivel con Abraham Rajo .</p>
+    <p>Descubrirás cómo el protocolo HTTP facilita la comunicación web, analizaremos la estructura de un programa Java casi tan avanzado como la libreria final finalisima que tiene un software avanzadisimo para la epoca.</p>    <button onclick="toggleContent('introduction', 'Mostrar Detalles')">Mostrar Detalles</button>
+</section>
+<img src="Presentacion.png"   >
+<section id="topics">
+    <h2>Breve explicación del protocolo HTTP</h2>
+    <p>En el Protocolo de Transferencia de Hipertexto (HTTP), la comunicación entre clientes y servidores se realiza mediante solicitudes y respuestas. Los métodos HTTP, como GET y POST, indican el propósito de la comunicación, mientras que las URL, como https://www.ejemplo.com/pagina, identifican los recursos para encontrar mas información sobre el protocolo esta detallado en el rfc 2616.</p>
+    <button onclick="toggleContent('topics', 'Mostrar Detalles')">Mostrar Detalles</button>
+</section>
+
+<section id="methodology">
+    <h2>Estructura del programa</h2>
+    <p>Este programa Java, compuesto por cuatro clases (Cliente, EncontrarArchivo, Peticion y Servidor), constituye un servidor web básico que maneja solicitudes HTTP GET y envía respuestas correspondientes. A continuación, se resume la funcionalidad de cada clase:</p>
+
+    <p><strong>1. Cliente:</strong> Inicia el proceso, procesa la solicitud del usuario y envía solicitudes HTTP GET al servidor.</p>
+
+    <p><strong>2. EncontrarArchivo:</strong> Clase dedicada a la búsqueda y manejo de archivos en el directorio especificado.</p>
+
+    <p><strong>3. Peticion:</strong> Procesa las solicitudes HTTP del cliente, determinando el tipo y manejando la respuesta correspondiente.</p>
+
+    <p><strong>4. Servidor:</strong> Escucha continuamente en el puerto especificado, inicia hilos para gestionar múltiples clientes y maneja la configuración y respuestas HTTP.</p>
+
+    <p>Este conjunto de clases sigue operando en un bucle infinito, esperando conexiones y garantizando el funcionamiento continuo del servidor web.</p>
+
+
+    <button onclick="toggleContent('methodology', 'Mostrar Detalles')">Mostrar Detalles</button>
+</section>
+
+<section id="project">
+    <h2>Como funciona el proyecto que ocurre detras de este</h2>
+    <p><strong>Funcionamiento del Programa:</strong></p>
+
+    <p>Este programa Java opera como un servidor web básico, gestionando solicitudes HTTP GET y proporcionando respuestas correspondientes. A continuación, se detalla su funcionamiento desde la recepción de la primera petición del cliente:</p>
+
+    <p><strong>Funcionamiento del Programa:</strong> Este programa Java opera como un servidor web básico, gestionando solicitudes HTTP GET y proporcionando respuestas correspondientes. Desde la configuración del servidor hasta el manejo de solicitudes y la persistencia en un bucle infinito, aquí se resume su operación:</p>
+
+    <p>1. <strong>Configuración del Servidor:</strong> El usuario ingresa el puerto y directorio de archivos, iniciando hilos para el registro y manejo de solicitudes.</p>
+
+    <p>2. <strong>Servidor:</strong> Escucha en el puerto, iniciando hilos para cada cliente conectado.</p>
+
+    <p>3. <strong>Cliente:</strong> Procesa solicitudes, utiliza hilos para concurrencia y envía respuestas HTTP.</p>
+
+    <p>4. <strong>Registro de Peticiones:</strong> Mantiene un registro con fecha, tipo de solicitud, ruta y dirección IP, mostrándolo periódicamente.</p>
+
+    <p>5. <strong>RFC 2616:</strong> Sigue especificaciones como la gestión de conexiones, autenticación, códigos de estado, entre otros.</p>
+
+    <p>6. <strong>Manejo de Solicitudes HTTP:</strong> Analiza solicitudes, manejando archivos y directorios según la respuesta HTTP.</p>
+
+    <p>7. <strong>Hilos y Concurrencia:</strong> Utiliza hilos para manejar múltiples clientes simultáneamente.</p>
+
+    <p>8. <strong>Cierre de Conexiones:</strong> Implementa método para cerrar conexiones y liberar recursos.</p>
+
+    <p>9. <strong>Configuración por Consola:</strong> Solicita la configuración inicial del servidor.</p>
+
+    <p>10. <strong>Respuestas HTTP:</strong> Envía respuestas HTTP con códigos de estado y contenido de archivos según la solicitud.</p>
+
+    <p>El servidor sigue en un bucle infinito, esperando conexiones y gestionando solicitudes de clientes.</p>
+
+
+    <p>El servidor persiste en un bucle infinito, esperando nuevas conexiones y gestionando solicitudes de clientes.</p>
+
+    <p>Descubre nuestro proyecto destacado: "<em>Optimización de Algoritmos de Búsqueda</em>". Exploraremos cómo aplicamos conceptos avanzados para mejorar la eficiencia y rendimiento de algoritmos de búsqueda en grandes conjuntos de datos.</p>
+    <button onclick="toggleContent('project', 'Mostrar Detalles')">Mostrar Detalles</button>
+</section>
+
+<section id="team">
+    <h2>Como usar el programa</h2>
+    <p><strong>Cómo Ejecutar el Programa:</strong></p>
+
+    <p>1. <strong>Descargar un IDE:</strong> Descarga un entorno de desarrollo integrado (IDE) como IntelliJ IDEA desde la <a href="https://www.jetbrains.com/idea/" target="_blank">página oficial</a>.</p>
+
+    <p>2. <strong>Abrir el IDE:</strong> Una vez descargado, abre el programa y carga la carpeta del proyecto con el contenido deseado.</p>
+
+    <p>3. <strong>Modificar la Clase Servidor:</strong> En la clase <code>Servidor</code>, especifica el puerto y el directorio donde se encuentran los archivos que deseas mostrar en tu página web.</p>
+
+    <p>4. <strong>Ejecutar el Programa:</strong> Haz clic en el botón de reproducción (play) para ejecutar el programa.</p>
+
+    <p>5. <strong>Abrir el Navegador:</strong> Abre tu navegador y ingresa tu IP actual junto con el puerto. Si tienes una página llamada <code>index.html</code>, se mostrará automáticamente; de lo contrario, agrega <code>/nombre_archivo.html</code> después del puerto para cargar el contenido deseado.</p>
+
+    <button onclick="toggleContent('team', 'Mostrar Detalles')">Mostrar Detalles</button>
+
+
+
+</section>
+
+
+<!-- Fin de la página web -->
+<footer>
+    <p>&copy; 2023 PAGINA WEB HECHA POR EL PICHICHI EL MEJOR THE BEST EL MAS GUAPO ;)</p>
+</footer>
+
+
+<script>
+    // Función para mostrar/ocultar detalles en secciones
+    function toggleContent(sectionId, buttonText) {
+        const section = document.getElementById(sectionId);
+        const button = section.querySelector('button');
+        const paragraphs = section.querySelectorAll('p'); // Cambio aquí: selecciona todos los párrafos
+
+        paragraphs.forEach(paragraph => {
+            if (paragraph.style.display === 'none') {
+                paragraph.style.display = 'block';
+                section.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+            } else {
+                paragraph.style.display = 'none';
+                section.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
+            }
+        });
+
+        button.textContent = buttonText;
+    }
+</script>
+
+<script>
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: '#ffffff' },
+            shape: { type: 'circle', stroke: { width: 0, color: '#000000' }, polygon: { nb_sides: 5 }, image: { src: 'img/github.svg', width: 100, height: 100 } },
+            opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+            size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+            line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
+            move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+            modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+        },
+        retina_detect: true
+    });
+</script>
+</body>
+
+</html>
